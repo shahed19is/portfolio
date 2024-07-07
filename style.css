@@ -1,0 +1,257 @@
+:root{
+    --bg-color: #C80036; /*BackGround Color*/
+    --fg-color: #0C1844; /*ForeGround Color*/
+    --tp-color: #FF6969; /*ThirdParty Color*/
+    --ft-color: #FFF5E1; /*FourTh Color*/
+    --min-width: 900px;
+    --font-size: 3.25rem;
+}
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-optical-sizing: auto;
+    color: var(--fg-color);
+}
+
+.no-view {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--tp-color);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+/*Head styles*/
+header{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 100%;
+    height: 75px;
+    position:sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    z-index: 10;
+}
+
+.header-container{
+    min-width: var(--min-width);
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo, ol{
+    display: flex;
+    align-items: center;
+}
+
+.logo p{
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.75rem;
+}
+
+.logo-img, li{
+    list-style: none;
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+li:hover {
+    color: var(--tp-color);
+}
+
+/*Cover part styles*/
+.cover-holder{
+    width: 100%;
+    height: 512px;
+    background-color: var(--ft-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.cover{
+    min-width: var(--min-width);
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.short {
+    margin: 1rem 1rem;
+    font-size: var(--font-size);
+}
+
+.short p {
+    font-size: 0.5em;
+}
+
+.short h2{
+    color: var(--tp-color);
+    font-family: "Lobster", sans-serif;
+    font-size: 1em;
+    /*Typing effect*/
+    margin: 0 auto;
+    overflow: hidden;
+    border-right: 2px solid var(--tp-color);
+    white-space: nowrap;
+    animation: 
+    typing 3s steps(19, start),
+    blink-caret .75s 10 step-end;
+}
+
+.social {
+    width: fit-content;
+    margin-top: 3rem;
+}
+
+.social a {
+    text-decoration: none;
+    margin-right: 1.5rem;
+}
+
+.social img:hover {
+    transform: scale3d(1.5, 1.5, 1.5);
+    transition: transform 100ms linear;
+}
+
+.short+img {
+    /* max-height: 250px; */
+    /* width: 25%; */
+    height: 750px;
+    position: relative;
+    top: 10%;
+    z-index: 1;
+}
+
+/*about section*/
+.about {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-holder {
+    min-width: var(--min-width);
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-video {
+    width: auto;
+    height: 360px;
+    aspect-ratio: 16/9;
+}
+
+.brief-about {
+    font-size: var(--font-size);
+    margin: 1em;
+    padding: 1em;
+    text-align: justify;
+}
+
+.brief-about h2 {
+    color: var(--tp-color);
+    font-family: "Lobster", sans-serif;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+
+.brief-about p {
+    font-size: 0.5em;
+}
+
+/*Animations*/
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--tp-color) }
+}
+
+/*Responsive*/
+@media all and (max-width: 1900px) {
+    .short, .brief-about {
+        font-size: 3rem;
+    }
+    .about-video {
+        height: 300px;
+    }
+}
+
+@media all and (max-width: 1700px) {
+    .short, .brief-about {
+        font-size: 2.75rem;
+    }
+    .about-video {
+        height: 280px;
+    }
+}
+
+@media all and (max-width: 1600px) {
+    :root {
+        --font-size: 2.5rem;
+    }
+    .short+img {
+        height: 650px;
+        top: 12%;
+    }
+    .about-video {
+        height: 260px;
+    }
+}
+
+@media all and (max-width: 1500px) {
+    :root {
+        --font-size: 2.25rem;
+    }
+    .short+img {
+        height: 650px;
+        top: 15%;
+    }
+    .about-video {
+        height: 240px;
+    }
+}
+
+@media all and (max-width: 1300px) {
+    :root {
+        --font-size: 2rem;
+    }
+
+    .about-video {
+        height: 220px;
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .no-view {
+        display: flex;
+    }
+    header, main {
+        display: none;
+    }
+}
